@@ -92,6 +92,8 @@ async function jugarautomaticament() {
 
         //comprova se la sqüència del jugador és la mateixa que a la de la partida
         if (resposta.join() == sequencia.join()) {
+            renous.victoria.currentTime = 0;
+            renous.victoria.play();
             await esperar(1000);//Si ho és espera 1 segón i crida a novaronda per afegir més colors
             novaronda();
         } else {
