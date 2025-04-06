@@ -58,9 +58,11 @@ function clicar(color) {
         resposta.push(color);//fa que la resposta del jugador s'afegeixi a la llista resposta
     }
     if (resposta.join() == sequencia.join()) {
+        renous.victoria.currentTime = 0;
         renous.victoria.play();//Si la resposta és correscte inicia aquest so
         setTimeout(novaronda, 500);//espera 500ms
     } else if (!sequencia.join().startsWith(resposta.join())) {
+        renous.error.currentTime = 0;
         renous.error.play();//Se comprova si la resposta del jugador no és correcte amb startswith fa sonar el so error amb un alert
         alert("Has perdut");
         comenca();//Torna a començar el joc
@@ -107,6 +109,7 @@ async function jugarautomaticament() {
 
 //Funcó per rendir-se
 function merindo() {
+    renous.rendir.currentTime = 0;
     renous.rendir.play();//sona el so de derrota
     modeautomatic = false;//Atura el mode automàtic
     resposta = [];//Reinicia la llista de respostes
